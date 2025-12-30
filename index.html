@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-gamepad"></i> Classic Snake Game</h1>
+            <p class="subtitle">Eat the food, grow longer, avoid collisions!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="game-info">
+                <div class="score-board">
+                    <div class="score-item">
+                        <span class="score-label">Score</span>
+                        <span id="score" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">High Score</span>
+                        <span id="high-score" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Speed</span>
+                        <span id="speed" class="score-value">Normal</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="start-btn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Game
+                    </button>
+                    <button id="pause-btn" class="btn btn-secondary">
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button id="reset-btn" class="btn btn-danger">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                    <div class="speed-controls">
+                        <button id="speed-down" class="btn btn-speed">
+                            <i class="fas fa-minus"></i> Slower
+                        </button>
+                        <button id="speed-up" class="btn btn-speed">
+                            <i class="fas fa-plus"></i> Faster
+                        </button>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <ul>
+                        <li>Use <kbd>Arrow Keys</kbd> or <kbd>WASD</kbd> to control the snake</li>
+                        <li>Eat the <span class="food-sample"></span> red food to grow and earn points</li>
+                        <li>Avoid hitting walls or the snake's own body</li>
+                        <li>Each food gives you 10 points</li>
+                        <li>Game speeds up as your score increases</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <canvas id="game-canvas" width="600" height="600"></canvas>
+                <div id="game-over" class="game-over">
+                    <h2>Game Over!</h2>
+                    <p>Your final score: <span id="final-score">0</span></p>
+                    <button id="restart-btn" class="btn btn-primary">
+                        <i class="fas fa-play-circle"></i> Play Again
+                    </button>
+                </div>
+                <div id="welcome" class="welcome">
+                    <h2>Ready to Play?</h2>
+                    <p>Click "Start Game" to begin your snake adventure!</p>
+                    <div class="snake-demo">
+                        <div class="demo-cell"></div>
+                        <div class="demo-cell snake-cell"></div>
+                        <div class="demo-cell snake-cell"></div>
+                        <div class="demo-cell snake-cell head"></div>
+                        <div class="demo-cell food-cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created with <i class="fas fa-heart"></i> using HTML5, CSS3 & JavaScript</p>
+            <p class="github-link">
+                <i class="fab fa-github"></i> 
+                <a href="#" id="github-repo">View on GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
