@@ -450,10 +450,10 @@ restartBtn.addEventListener('click', startGame);
 speedUpBtn.addEventListener('click', () => changeSpeed(-20));
 speedDownBtn.addEventListener('click', () => changeSpeed(20));
 
-// Set GitHub repo link (update with actual repo URL later)
+// GitHub repo link
 githubRepoLink.addEventListener('click', (e) => {
     e.preventDefault();
-    alert('GitHub repository will be created and linked after upload.');
+    window.open('https://github.com/meifu2027/snake-game', '_blank');
 });
 
 // Initialize canvas rounded rectangle method if not exists
